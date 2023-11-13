@@ -61,7 +61,7 @@ def customer(env, name, server, service_time):
 random.seed(random_seed)
 
 env1 = simpy.Environment()
-server1 = simpy.Resource(env1, capacity=1)  # capacity changes the number of generators in the system.
+server1 = simpy.Resource(env1, capacity=1)  # capacity changes the number of servers in the system.
 
 env1.process(generator(env1, new_customers, interarrival, server1, service_time=0.15))
 env1.run()
